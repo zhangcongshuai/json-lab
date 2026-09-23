@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "json-lab"
+version = "1.0.0"
+description = "JSON formatting & timestamp conversion — offline Windows desktop tool"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "zhangcongshuai" }]
+keywords = ["json", "formatter", "timestamp", "unix-time", "desktop", "tkinter", "windows"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Win32 (MS Windows)",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Debuggers",
+  "Topic :: Utilities",
+]
+# stdlib only (tkinter ships with CPython on Windows)
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/zhangcongshuai/json-lab"
+Repository = "https://github.com/zhangcongshuai/json-lab"
+Issues = "https://github.com/zhangcongshuai/json-lab/issues"
+
+[project.scripts]
+json-lab = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

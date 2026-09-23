@@ -1,5 +1,10 @@
 # JSON Lab
 
+[![CI](https://github.com/zhangcongshuai/json-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/zhangcongshuai/json-lab/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-yellow.svg)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](#)
+
 > JSON 格式化 & 时间戳转换 — Windows 桌面离线工具  
 > JSON formatting & timestamp conversion — offline desktop tool for Windows
 
@@ -35,9 +40,9 @@
 
 ### 运行
 
-**方式一：直接使用 exe**
+**方式一：直接使用 exe（推荐）**
 
-从 [Releases](../../releases) 下载 `JSONLab.exe`，双击即可运行，无需安装 Python。
+从 [Releases](../../releases/latest) 下载 `JSONLab.exe`，双击即可运行，无需安装 Python。
 
 **方式二：源码运行**
 
@@ -54,7 +59,24 @@ pip install pyinstaller
 pyinstaller --onefile --noconsole --name "JSONLab" main.py
 ```
 
-产物位于 `dist\JSONLab.exe`。
+**运行测试**
+
+```powershell
+python -m unittest discover -s tests -v
+```
+
+### 项目结构
+
+```
+json-lab/
+├── main.py              # 应用入口（tkinter GUI + 核心逻辑）
+├── tests/test_core.py   # 核心逻辑单元测试（无 GUI）
+├── assets/              # 界面预览图
+├── pyproject.toml       # 项目元数据
+├── CONTRIBUTING.md      # 贡献指南
+├── CHANGELOG.md         # 版本日志
+└── .github/workflows/   # CI
+```
 
 ### 界面预览
 
@@ -94,9 +116,9 @@ pyinstaller --onefile --noconsole --name "JSONLab" main.py
 
 ### Run
 
-**Option A — prebuilt exe**
+**Option A — prebuilt exe (recommended)**
 
-Download `JSONLab.exe` from [Releases](../../releases) and double-click. No Python required.
+Download `JSONLab.exe` from [Releases](../../releases/latest) and double-click. No Python required.
 
 **Option B — from source**
 
@@ -111,6 +133,12 @@ Requires Python 3.10+ (stdlib `tkinter` only, no third-party packages).
 ```powershell
 pip install pyinstaller
 pyinstaller --onefile --noconsole --name "JSONLab" main.py
+```
+
+**Tests**
+
+```powershell
+python -m unittest discover -s tests -v
 ```
 
 ### License
